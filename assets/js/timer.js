@@ -1,7 +1,10 @@
 /*!
+ * timer.js
+ *
  * (C) 2012 OGAWA Katsuhiro
  */
-!function() {
+!function($) {
+
   var Timer;
 
   Timer = function(el, audio) {
@@ -18,6 +21,8 @@
 
         if (times < 60 && !this.$el.hasClass('timer-warn')) {
           this.$el.addClass('timer-warn');
+        } else if (times >= 60 && this.$el.hasClass('timer-warn')) {
+          this.$el.removeClass('timer-warn');
         }
 
         return this;
@@ -47,23 +52,21 @@
       return this.timerId;
     }
 
-  , clear: function() {
+  , reset: function() {
+      this.times(0);
+
       if (this.timerId) {
         clearInterval(this.timerId);
         this.timerId = null;
       }
     }
 
-  , reset: function() {
-      this.clear();
-      $('#timer').hide();
-      $('#timer-config').show();
-    }
-
   , fire: function() {
-      this.times(0);
-      this.audio.play();
-      this.clear();
+      if (this.audio) {
+        this.audio.play();
+      }
+
+      this.reset();
     }
 
   }
@@ -71,7 +74,7 @@
   function toTime(times) {
     var m, s;
 
-    m = parseInt(times / 60);
+    m = Math.floor(times / 60);
     s = times % 60;
     if (s < 10) {
       s = '0' + s;
@@ -81,7 +84,9 @@
   }
 
   $(function() {
-    var audio = new Audio('assets/audio/dora.wav'), timer;
+    var timer, audio;
+
+    audio = new Audio('assets/audio/dora.wav')
     audio.volume = 1.0;
 
     timer = new Timer(document.getElementById('timer-value'), audio);
@@ -99,6 +104,10 @@
 
     $('#timer-reset').click(function(e) {
       timer.reset();
+
+      $('#timer').hide();
+      $('#timer-config').show();
     });
   });
-}();
+
+}(window.jQuery);
