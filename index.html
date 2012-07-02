@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>LT.Timer</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <meta name="keyword" content="LT,ライトニングトーク,Lightning Talks,Timer,タイマー,勉強会,カウントダウン">
+  <link href="http://fonts.googleapis.com/css?family=Revalia" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+  <meta property="og:title" content="LT.Timer" />
+  <meta property="og:type" content="product" />
+  <meta property="og:url" content="http://fvstr.jp/lt/" />
+  <meta property="og:image" content="" />
+  <meta property="og:site_name" content="LT.Timer" />
+  <meta property="fb:admins" content="1312266761" />
+</head>
+<body>
+  <header>
+    <h1>LT.<span class="highlight">T</span>imer</h1>
+    <div class="fb-like" data-href="http://fvstr.jp/lt/" data-send="false" data-layout="button_count" data-width="80" data-show-faces="false"></div>
+    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://fvstr.jp/lt/">Tweet</a>
+    <p class="copyright">&copy; 2012 OGAWA Katsuhiro</p>
+  </header>
+  <div id="timer-config">
+    <select id="timer-times">
+      <option value="3">0:03</option>
+      <option value="60">1:00</option>
+      <option value="120">2:00</option>
+      <option value="180">3:00</option>
+      <option value="300" selected>5:00</option>
+      <option value="600">10:00</option>
+      <option value="900">15:00</option>
+      <option value="1200">20:00</option>
+      <option value="1800">30:00</option>
+      <option value="2400">40:00</option>
+    </select>
+    <p>
+      <button id="timer-start" class="btn" type="submit">Start</button>
+    </p>
+  </div>
+  <div id="timer" class="hide">
+    <div id="timer-value">0:00</div>
+    <div id="timer-actions">
+      <button id="timer-fire" class="btn highlight">Fire</button>
+      <button id="timer-reset" class="btn">Reset</button>
+    </div>
+  </div>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<script type="text/javascript" src="//www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load("jquery", "1");
+</script>
+<script type="text/javascript" src="assets/js/timer.js"></script>
+</body>
+</html>

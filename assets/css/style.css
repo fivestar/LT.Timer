@@ -1,0 +1,47 @@
+body {
+  font-family: "Revalia", cursive;
+  text-align: center;
+}
+#timer-value {
+  margin-bottom: 50px;
+  font-weight: bold;
+  font-size: 320px;
+  line-height: 1;
+}
+select#timer-times {
+  font-family: sans-serif;
+  font-size: 200%;
+  vertical-align: baseline;
+}
+.timer-warn {
+  color: red;
+}
+.btn {
+  font-size: 3em;
+}
+.highlight {
+  color: #e00;
+}
+.hide {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  #timer-value {
+    margin-bottom: 30px;
+    font-size: 80px;
+  }
+  button.btn {
+    font-size: 2em;
+  }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  #timer-value {
+    font-size: 160px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1100px) {
+  #timer-value {
+    font-size: 260px;
+  }
+}
